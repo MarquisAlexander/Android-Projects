@@ -1,5 +1,6 @@
 package com.example.loginapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log.i
@@ -20,8 +21,10 @@ class MainActivity : AppCompatActivity() {
 
             if(username.equals("user") && password.equals("pass")){
                 Toast.makeText(applicationContext, "Login OK", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, LoginOkActivity::class.java))
             } else {
                 Toast.makeText(applicationContext, "Login Inválido", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, LoginErradoActivity::class.java))
             }
 
             binding.editUsername.setText("")
